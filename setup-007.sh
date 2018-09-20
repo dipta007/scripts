@@ -42,6 +42,7 @@ su - dipta007 -c "npm install -g nodemon gulpjs/gulp-cli"
 
 # Install npm
 apt install npm
+npm update npm -g
 
 # Install GO
 snap install --classic go
@@ -70,10 +71,10 @@ apt install oracle-java8-set-default -y
 
 # ******************* Install softwares ******************* #
 
-# Install XDM (like IDM in Windows)
-add-apt-repository ppa:damien-moore/codeblocks-stable 
-apt update 
-apt install codeblocks codeblocks-contrib
+# Install ppa (like IDM in Windows)
+sudo add-apt-repository ppa:persepolis/ppa
+sudo apt update
+sudo apt install persepolis
 
 # Install VLC
 add-apt-repository ppa:videolan/master-daily
@@ -89,7 +90,9 @@ mkdir -p .fonts # -p in case .fonts is already there
 cd .fonts
 wget files.ekushey.org/Ekushey_OpenType_Bangla_Fonts/SolaimanLipi_Bold_10-03-12.ttf
 fc-cache -f -v
-cd ~
+cd ~add-apt-repository ppa:noobslab/apps
+apt-get update
+apt-get install xdman
 chown -R dipta007:dipta007 ./.fonts
 
 # install dropbox
@@ -97,8 +100,8 @@ apt-get -y install nautilus-dropbox
 # Configure dropbox from system tray
 
 # install codeblocks
-add-apt-repository ppa:damien-moore/codeblocks-stable 
-apt update 
+add-apt-repository ppa:damien-moore/codeblocks-stable
+apt update
 apt install codeblocks codeblocks-contrib
 
 # install guake (terminal)
@@ -109,7 +112,7 @@ apt-get install vlc
 
 # install skype
 echo "deb [arch=amd64] https://repo.skype.com/deb stable main" | sudo tee /etc/apt/sources.list.d/skype-stable.list
-wget https://repo.skype.com/data/SKYPE-GPG-KEY 
+wget https://repo.skype.com/data/SKYPE-GPG-KEY
 apt-key add SKYPE-GPG-KEY
 apt install apt-transport-https
 apt update
@@ -128,7 +131,7 @@ apt-get install playonlinux
 apt install gdebi-core
 apt-get install gdebi -y
 wget https://www.syntevo.com/downloads/smartgit/smartgit-18_1_4.deb
-gdebi smartgit-18_1_4.deb 
+gdebi smartgit-18_1_4.deb
 
 # install pycharm
 snap install pycharm-professional --classic

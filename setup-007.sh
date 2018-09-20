@@ -72,9 +72,9 @@ apt install oracle-java8-set-default -y
 # ******************* Install softwares ******************* #
 
 # Install ppa (like IDM in Windows)
-sudo add-apt-repository ppa:persepolis/ppa
-sudo apt update
-sudo apt install persepolis
+add-apt-repository ppa:persepolis/ppa
+apt update
+apt install persepolis
 
 # Install VLC
 add-apt-repository ppa:videolan/master-daily
@@ -111,7 +111,7 @@ apt-get install guake
 apt-get install vlc
 
 # install skype
-echo "deb [arch=amd64] https://repo.skype.com/deb stable main" | sudo tee /etc/apt/sources.list.d/skype-stable.list
+echo "deb [arch=amd64] https://repo.skype.com/deb stable main" | tee /etc/apt/sources.list.d/skype-stable.list
 wget https://repo.skype.com/data/SKYPE-GPG-KEY
 apt-key add SKYPE-GPG-KEY
 apt install apt-transport-https
@@ -138,13 +138,13 @@ snap install pycharm-professional --classic
 # snap install pycharm-community --classic
 
 # install goland
-sudo snap install goland --classic
+snap install goland --classic
 
 # install postman
 wget https://dl.pstmn.io/download/latest/linux64 -O postman.tar.gz
-sudo tar -xzf postman.tar.gz -C /opt
+tar -xzf postman.tar.gz -C /opt
 rm postman.tar.gz
-sudo ln -s /opt/Postman/Postman /usr/bin/postman
+ln -s /opt/Postman/Postman /usr/bin/postman
 
 cat > ~/.local/share/applications/postman.desktop <<EOL
 [Desktop Entry]
@@ -158,8 +158,13 @@ Categories=Development;
 EOL
 
 # install slack
-sudo apt install snapd
-sudo snap install slack --classic
+apt install snapd
+snap install slack --classic
+
+# install gimp
+add-apt-repository ppa:otto-kesselgulasch/gimp
+apt-get update
+apt-get install gimp
 
 # Last Step
 apt autoremove

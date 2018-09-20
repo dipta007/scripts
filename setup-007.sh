@@ -164,5 +164,33 @@ apt-get install apt-transport-https ca-certificates curl software-properties-com
 # install vs code
 # install vs code extensions
 
+# code --install-extension abusaidm.html-snippets
+# code --install-extension christian-kohler.path-intellisense
+# code --install-extension CoenraadS.bracket-pair-colorizer
+# code --install-extension dbaeumer.jshint
+# code --install-extension eamodio.gitlens
+# code --install-extension eg2.tslint
+# code --install-extension formulahendry.auto-close-tag
+# code --install-extension formulahendry.auto-rename-tag
+# code --install-extension formulahendry.code-runner
+# code --install-extension ionutvmi.path-autocomplete
+# code --install-extension johnpapa.Angular2
+# code --install-extension kevinmcgowan.TypeScriptImport
+# code --install-extension leizongmin.node-module-intellisense
+# code --install-extension Mikael.Angular-BeastCode
+# code --install-extension moppitz.vscode-extension-auto-import
+# code --install-extension nathanchapman.JavaScriptSnippets
+# code --install-extension NuclleaR.vscode-extension-auto-import
+# code --install-extension PKief.material-icon-theme
+# code --install-extension pmneo.tsimporter
+# code --install-extension rbbit.typescript-hero
+# code --install-extension shardulm94.trailing-spaces
+# code --install-extension steoates.autoimport
+# code --install-extension thekalinga.bootstrap4-vscode
+# code --install-extension wayou.vscode-todo-highlight
+# code --install-extension wix.vscode-import-cost
+# code --install-extension woodywoodsta.vscode-material-syntax-dark
+# code --install-extension Zignd.html-css-class-completion
+
 # 9. Installing ibus-avro on Ubuntu 18.04
 # https://askubuntu.com/questions/1035875/installing-avro-in-18-04-lts

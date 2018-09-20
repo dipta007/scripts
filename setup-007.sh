@@ -3,14 +3,14 @@
 # A shell script to install softwares automatically
 # Run the script as root by typing: sudo sh setup.sh
 
-# 0. First go to home
+# First go to home
 cd ~
 
-# 1. First update and upgrade
+# First update and upgrade
 apt update -y
 apt upgrade -y
 
-# 2. Install Chrome
+# Install Chrome
 mkdir tmp
 cd ~/tmp
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -20,14 +20,14 @@ dpkg -i google-chrome*.deb # Try again
 apt install -yf # Just in case
 cd ~
 
-# 5. Python
+# Python
 apt install -y ipython3-notebook python3-pip
 # su - forthright48 -c "pip3 install --user numpy pandas matplotlib requests"
 
-# 6. Install other useful packages
+# Install other useful packages
 apt install -y git vim curl kdiff3 htop
 
-# 7. Install NodeJS
+# Install NodeJS
 curl -sL https://deb.nodesource.com/setup_7.x | -E bash -
 apt update -y
 apt install -y nodejs
@@ -40,16 +40,19 @@ su - dipta007 -c "npm config set prefix '~/.npm-global'"  #Don't forget to updat
 su - dipta007 -c "npm install npm@latest -g"
 su - dipta007 -c "npm install -g nodemon gulpjs/gulp-cli"
 
-# 7. Install mongo db
+# Install GO
+snap install --classic go
+
+# Install mongo db
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
-echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 apt-get update
 apt-get install -y mongodb-org
 
-# 8. Install restricted extras (for mp3 and stuff)
+# Install restricted extras (for mp3 and stuff)
 apt install -y ubuntu-restricted-extras
 
-# 11. Git Configure
+# Git Configure
 git config --global user.email "iamdipta@gmail.com"
 git config --global user.name "Shubhashis Roy Dipta"
 git config --global diff.tool kdiff3
@@ -62,7 +65,7 @@ apt update -y
 apt install oracle-java8-set-default -y
 
 
-
+# ******************* Install softwares ******************* #
 
 # Install XDM (like IDM in Windows)
 add-apt-repository ppa:damien-moore/codeblocks-stable 
@@ -76,9 +79,9 @@ apt install vlc qtwayland5
 apt install libavcodec-extra
 
 # Install torrent
-sudo apt-get install deluge
+apt-get install deluge
 
-# 3. Bangla Fonts
+# Bangla Fonts
 mkdir -p .fonts # -p in case .fonts is already there
 cd .fonts
 wget files.ekushey.org/Ekushey_OpenType_Bangla_Fonts/SolaimanLipi_Bold_10-03-12.ttf
@@ -87,7 +90,7 @@ cd ~
 chown -R dipta007:dipta007 ./.fonts
 
 # install dropbox
-sudo apt-get -y install nautilus-dropbox
+apt-get -y install nautilus-dropbox
 # Configure dropbox from system tray
 
 # install codeblocks
@@ -118,11 +121,39 @@ add-apt-repository ppa:noobslab/apps
 apt-get update
 apt-get install playonlinux
 
-# install smart git
-add-apt-repository ppa:eugenesan/ppa
-apt-get update
-apt-get install smartgit
-apt-get install smartgithg
+# install smart git (update according to the latest version)
+apt install gdebi-core
+apt-get install gdebi -y
+wget https://www.syntevo.com/downloads/smartgit/smartgit-18_1_4.deb
+gdebi smartgit-18_1_4.deb 
+
+# install pycharm
+snap install pycharm-professional --classic
+# snap install pycharm-community --classic
+
+# install goland
+sudo snap install goland --classic
+
+# install postman
+wget https://dl.pstmn.io/download/latest/linux64 -O postman.tar.gz
+sudo tar -xzf postman.tar.gz -C /opt
+rm postman.tar.gz
+sudo ln -s /opt/Postman/Postman /usr/bin/postman
+
+cat > ~/.local/share/applications/postman.desktop <<EOL
+[Desktop Entry]
+Encoding=UTF-8
+Name=Postman
+Exec=postman
+Icon=/opt/Postman/resources/app/assets/icon.png
+Terminal=false
+Type=Application
+Categories=Development;
+EOL
+
+# install slack
+sudo apt install snapd
+sudo snap install slack --classic
 
 # Last Step
 apt autoremove
@@ -135,5 +166,3 @@ apt-get install apt-transport-https ca-certificates curl software-properties-com
 
 # 9. Installing ibus-avro on Ubuntu 18.04
 # https://askubuntu.com/questions/1035875/installing-avro-in-18-04-lts
-
-# install intellij

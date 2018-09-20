@@ -40,6 +40,9 @@ su - dipta007 -c "npm config set prefix '~/.npm-global'"  #Don't forget to updat
 su - dipta007 -c "npm install npm@latest -g"
 su - dipta007 -c "npm install -g nodemon gulpjs/gulp-cli"
 
+# Install npm
+apt install npm
+
 # Install GO
 snap install --classic go
 

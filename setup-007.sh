@@ -166,6 +166,26 @@ add-apt-repository ppa:otto-kesselgulasch/gimp
 apt-get update
 apt-get install gimp
 
+# install tweak
+apt install gnome-shell-extensions
+# open tweaks & set startup application
+
+# install netspeed indicator
+apt-add-repository ppa:fixnix/netspeed
+apt-get update
+apt-get install indicator-netspeed-unity
+
+# install shutter (screen capture)
+add-apt-repository ppa:shutter/ppa
+apt-get update
+apt-get install shutter
+
+# install obs (video recording)
+apt-get install ffmpeg
+add-apt-repository ppa:obsproject/obs-studio
+apt-get update
+apt-get install obs-studio
+
 # Last Step
 apt autoremove
 apt-get install apt-transport-https ca-certificates curl software-properties-common

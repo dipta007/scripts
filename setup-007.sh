@@ -21,7 +21,9 @@ apt install -yf # Just in case
 cd ~
 
 # Python
-apt install -y ipython3-notebook python3-pip
+apt install -y python3-pip
+pip3 install jupyter
+pip3 install pandas
 # su - forthright48 -c "pip3 install --user numpy pandas matplotlib requests"
 
 # Install other useful packages

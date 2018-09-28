@@ -24,6 +24,9 @@ cd ~
 apt install -y python3-pip
 pip3 install jupyter
 pip3 install pandas
+pip3 install sklearn
+pip3 install numpy
+pip3 install matplotlib
 # su - forthright48 -c "pip3 install --user numpy pandas matplotlib requests"
 
 # Install other useful packages
@@ -35,12 +38,12 @@ apt update -y
 apt install -y nodejs
 
 # Fix npm permission
-su - dipta007 -c "mkdir ~/.npm-global"
-su - dipta007 -c "npm config set prefix '~/.npm-global'"  #Don't forget to update path
+mkdir ~/.npm-global
+npm config set prefix ~/.npm-global
 
 # Install some essential node packages
-su - dipta007 -c "npm install npm@latest -g"
-su - dipta007 -c "npm install -g nodemon gulpjs/gulp-cli"
+npm install npm@latest -g
+npm install -g nodemon
 
 # Install npm
 apt install npm
